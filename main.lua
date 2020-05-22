@@ -249,7 +249,6 @@ function love.update(dt)
     else
         player2.dy = 0
     end
-    player 2 (with AI)
     
 
 
