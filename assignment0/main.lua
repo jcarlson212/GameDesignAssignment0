@@ -250,12 +250,14 @@ function love.update(dt)
         --player2.dy = 0
     --end
     -- player 2 (with AI)
-    if player2.y < ball.y then
-        player2.dy = PADDLE_SPEED
-    elseif player2.y > ball.y then
-        player2.dy = -PADDLE_SPEED
+    shouldPlayer2Move = math.random(-50, 50)
+    if shouldPlayer2Move > -30 then
+        if player2.y < ball.y then
+            player2.dy = PADDLE_SPEED
+        elseif player2.y > ball.y then
+            player2.dy = -PADDLE_SPEED
+        end
     end
-    
 
 
     -- update our ball based on its DX and DY only if we're in play state;
