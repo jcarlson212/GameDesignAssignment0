@@ -252,10 +252,12 @@ function love.update(dt)
     -- player 2 (with AI)
     shouldPlayer2Move = math.random(-50, 50)
     if shouldPlayer2Move > -30 then
-        if player2.y < ball.y then
+        if player2.y < ball.y - 3 then
             player2.dy = PADDLE_SPEED
-        elseif player2.y > ball.y then
+        elseif player2.y > ball.y + 3 then
             player2.dy = -PADDLE_SPEED
+        else
+            player2.dy = 0
         end
     end
 
